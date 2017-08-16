@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Zipcode</title>
+        <style>
+            donut-chart {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                display: block;
+                margin: 0 auto;
+            }
+            horizontal-chart {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                display: block;
+                margin: 0 auto;
+            }
+            .horizontal div {
+                  font: 10px sans-serif;
+                  text-align: right;
+                  padding: 3px;
+                  margin: 1px;
+                  color: white;
+            }
+            g {
+                padding-right: 350px;
+            }
+            h2 {
+                text-align: center;
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+            svg {
+                min-width: 600px;
+                min-height: 600px;
+                display: block;
+                margin: auto;
+                
+            }
+            .line {
+                fill: none;
+                stroke: #ffab00;
+                stroke-width: 3;
+            }
+            .legend {
+              font-size: 12px;
+              font-family: sans-serif;
+            rect {
+                stroke-width: 2;
+              }
+            text {
+                fill: lightcyan;
+              }
+            }
+
+            /* Style the dots by assigning a fill and stroke */
+            .dot {
+                fill: #ffab00;
+                stroke: #fff;
+            }
+        </style>
+    	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.10.0/d3.js"></script>
+
+    </head>
+    <body>
+        
+        <p><a href="/"> Back to Search </a></p>
+        
+        Showing D3 Graphs for ZipCode: {{ zipcode }}
+        
+        <hr />
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <h2>Company Sizes in term of Employees</h2>
+                    <div ng-model=" chart1 ">
+                        <donut-chart
+                        gen-donut-chart=" donutChart(chartData) "
+                        d-data = " chart1"
+                        />
+                    </div>
+                
+                </div>
+            </div>
+         </div>
+        <hr />
+            <h2>Total Payroll by Year (in $1,000)</h2>
+                <div ng-model=" chart0 ">
+                    <horizontal-chart
+                    gen-horizontal-chart=" horizontalChart(chartData) "
+                    h-data = " chart0 "
+                    />
+                </div>
+            
+       
+        
+        
+        
+        
+    </body>
+</html>
